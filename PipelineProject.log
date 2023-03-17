@@ -1,0 +1,7 @@
+Donor 1 (2dpi) had 10000.0 read pairs before Bowtie2 filtering and 3519.0 pairs after.
+Donor 1 (6dpi) had 10000.0 read pairs before Bowtie2 filtering and 2921.0 pairs after.
+Donor 3 (2dpi) had 10000.0 read pairs before Bowtie2 filtering and 3403.0 pairs after.
+Donor 3 (6dpi) had 10000.0 read pairs before Bowtie2 filtering and 2511.0 pairs after.
+spades.py -k 55,77,99,127 -t 2 --only-assembler --pe1-1 '+'testdata_'+file1+'_bowtie2_1.fastq --pe1-2 '+'testdata_'+file1+'_bowtie2_2.fastq --pe2-1 '+'testdata_'+file2+'_bowtie2_1.fastq --pe2-2 '+'testdata_'+file2+'_bowtie2_2.fastq --pe3-1 '+'testdata_'+file3+'_bowtie2_1.fastq --pe3-2 '+'testdata_'+file3+'_bowtie2_2.fastq --pe4-1 '+'testdata_'+file4+'_bowtie2_1.fastq --pe4-2 '+'testdata_'+file4+'_bowtie2_2.fastq -o SpadesAssembly/
+There are 51 contigs > 1000 bp in the assembly.
+There are 92042bp in the assembly.
