@@ -13,7 +13,7 @@ We are interested in looking at the Human herpesvirus 5 transcriptomes and build
 
 Requirements to run the Pipeline: 
 
-Linux/Unix, Biopython, Python3, SPAdes, Bowtie2
+Linux/Unix, Biopython, Python3, SPAdes, Bowtie2, Blast+
 
 Run the Pipeline: 
 To run the script, first clone the project from GitHub and type the command to run the PipelineProject_main.py which will run through the full pipeline and store data in the PipelineProject.log file. Make sure that the following dependencies are installed on the terminal or server. 
