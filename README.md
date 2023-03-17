@@ -22,4 +22,4 @@ To run the script, first clone the project from GitHub and type the command to r
 - from Bio import SeqIO
 - from Bio import Entrez
 - from Bio import SearchIO
-- from Bio.Seq import Seq
+- from Bio.Seq import Seq 
