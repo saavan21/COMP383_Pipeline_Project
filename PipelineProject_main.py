@@ -5,12 +5,17 @@ from Bio import SeqIO
 from Bio import Entrez
 from Bio import SearchIO
 from Bio.Seq import Seq
-from Bio.Blast import NCBIWWW
 
 #set varibale directory to current directory
 directory = os.getcwd()
+#make folder
+folder = "PipelineProject_Saavan_Patel"
+#path for the directory and the folder 
+path = os.path.join(directory, folder)
+#make the directory
+os.mkdir(path)
 #changes current directory to sepcified directory
-os.chdir(directory)
+os.chdir(path)
 
 #creates and opnes a log file and will add all outputs as code runs
 log_file = open('PipelineProject.log', 'a')
@@ -289,3 +294,36 @@ def contigLongest():
 #call the function to run
 contigLongest()
 
+#define function to run blast
+def blast():
+
+    #building a BLAST database from the sequence.fasta file input
+    build_blast = 'makeblastdb -in ../sequence.fasta -out family -title Betaherpesvirinae -dbtype nucl'
+    os.system(build_blast)
+
+    #run the BLAST search using the contigLongest fasta file and results print in csv file
+    blast_table = "blastn -query contigLongest.fasta -db family -out blast_output.csv -outfmt '10 saccident length qstart qend sstart send bitscore evalue stitle'"
+    os.system(blast_table)
+
+#call the blast function
+blast()
+
+#define the function results_blast to make the table and print it
+def results_blast():
+    #open the log file and print all of the headers needed for the table
+    log_file.write('\n'+'sacc'+'\t'+'pident'+'\t'+'length'+'\t'+'qstart'+'\t'+'qend'+'\t'+'sstart'+'\t'+'send'+'\t'+'bitscore'+'\t'+'evalue'+'\t'+'stitle' +'\n')
+    #variable that will store the top BLAST hits to the output
+    topHits = 10
+    #open the file and store it in the title variable
+    title = open('blast_output.csv','r')
+
+    #read the first 10 lines of the blast output 
+    output = title.readlines()[0:10]
+    #for loop will run and write the top 10 hits in the table 
+    for l in output:
+        #writing in log file
+        log_file.write(l.replace(',','\t'))
+#call the function
+results_blast()
+#close the log file
+log_file.close()
