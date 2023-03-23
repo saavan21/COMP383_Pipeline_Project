@@ -13,10 +13,11 @@ We are interested in looking at the Human herpesvirus 5 transcriptomes and build
 
 Requirements to run the Pipeline: 
 
-Linux/Unix, Biopython, Python3, SPAdes, Bowtie2, Blast+
+Linux/Unix, Biopython, Python3, SRA Kit (perform fastq-dump), SPAdes, Bowtie2, Blast+
 
 Run the Pipeline: 
-To run the script, first clone the project from GitHub (https://github.com/saavan21/COMP383_Pipeline_Project.git) and type the command to run the PipelineProject_main.py which will run through the full pipeline and store data in the PipelineProject.log file. Make sure that the following dependencies are installed on the terminal or server. 
+To run the script, first clone the project from GitHub (https://github.com/saavan21/COMP383_Pipeline_Project.git) and type the command to run the PipelineProject_main.py which will run through the full pipeline and store data in the PipelineProject.log file. Make sure that the following dependencies are installed on the terminal or server. There are test data that can be used to run the pipeline faster. The sequence.fasta file will be needed to run the blast function. 
+
 - Import os
 - Import logging 
 - from Bio import SeqIO
